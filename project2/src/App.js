@@ -2,14 +2,56 @@ import React, { Component } from 'react';
 import './App.css';
 
 import TaskForm from './component/TaskForm';
-import Control from './component/Control';
+// import Control from './component/Control';
 import TaskList from './component/TaskList';
 
-var fs = require('fs');
 
 
 class App extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            Tasks : []
+        }
+    }
+    createData = () => {
+        var Tasks = [
+            {
+                id : 0,
+                name : 'go to school',
+                status: true
+            },
+            {
+                id : 1,
+                name : 'go to school',
+                status: true
+            },
+            {
+                id : 2,
+                name : 'go to school',
+                status: true
+            },
+            {
+                id : 3,
+                name : 'go to school',
+                status: true
+            }
+        ];
+        this.setState({
+            Tasks : Tasks
+        });
+        localStorage.setItem('Tasks', JSON.stringify(Tasks));
+    };
+    componentWillMount(){
+        if(localStorage && localStorage.getItem(Tasks)){
+            var Tasks = JSON.parse(localStorage.getItem(Tasks));
+            this.setState({
+                Tasks : Tasks
+            });
+        }
+    }
     render() {
+        var { Tasks } = this.state;
         return (
             <div className="container">
                 <h1>Hiroku</h1>
@@ -18,7 +60,7 @@ class App extends Component {
                         <TaskForm />
                         <button
                             type="button"
-                            class="btn btn-warning"
+                            className="btn btn-warning"
                             onClick={() => this.createData()}>
                             Create Data
                         </button>
@@ -27,7 +69,7 @@ class App extends Component {
                         {/* <Control /> */}
                         <div className="row">
                             <div className="col-md-12">
-                                <TaskList />
+                                <TaskList Tasks = { Tasks }/>
                             </div>
                         </div>
                     </div>

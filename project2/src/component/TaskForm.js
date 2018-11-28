@@ -12,11 +12,11 @@ class TaskForm extends Component {
                 </div>
                 <div className="card-body">
                     <div className="form-group">
-                        <label for="name">Tên</label>
+                        <label htmlFor="name">Tên</label>
                         <input type="text" name="name" className="form-control" placeholder="nhap gi do di" aria-describedby="helpId" />
                     </div>
                     <div className="form-group">
-                        <label for="exampleFormControlSelect1">Trạng thái</label>
+                        <label htmlFor="exampleFormControlSelect1">Trạng thái</label>
                         <select className="form-control" id="exampleFormControlSelect1">
                             <option>kích hoạt</option>
                             <option>Ẩn</option>

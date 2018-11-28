@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 import ListItem from './Listitem';
 
 class TaskList extends Component {
+    
     render() {
+        var { Tasks } = this.props;
+        var eleTasks = Tasks.map( (Task, index) => {
+            return <ListItem key ={Task.id} index= {index} Task = {Task} />
+        })
         return (
             <table className="table table-bordered">
                 <thead>
@@ -33,7 +38,7 @@ class TaskList extends Component {
                         <td>
                         </td>
                     </tr>
-                   <ListItem />
+                    <eleTasks />
                 </tbody>
             </table>
         );
