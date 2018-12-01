@@ -5,8 +5,8 @@ class ListItem extends Component {
         var { Task, index } = this.props;
         return (
             <tr>
-                <td>1</td>
-                {/* <td>{ Task.name}</td> */}
+                <td>{ index }</td>
+                <td>{ Task.content}</td>
                 <td className='text-center mt-10'>
                     <div className='alert alert-success' role="alert">kích hoạt</div>
                 </td>

@@ -1,0 +1,24 @@
+{
+  "Todos" : [
+      {
+          "id" : 1,
+          "content" : "go to work",
+          "status" : true
+      },
+      {
+          "id" : 2,
+          "content" : "go to school",
+          "status" : false
+      },
+      {
+          "id" : 3,
+          "content" : "go to bed",
+          "status" : true
+      },
+      {
+          "id" : 4,
+          "content" : "go to play",
+          "status" : false
+      }
+  ]
+}

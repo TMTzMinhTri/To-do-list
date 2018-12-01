@@ -6,7 +6,7 @@ class TaskList extends Component {
     
     render() {
         var { Tasks } = this.props;
-        var eleTasks = Tasks.map( (Task, index) => {
+        var EleTasks = Tasks.map( (Task, index) => {
             return <ListItem key ={Task.id} index= {index} Task = {Task} />
         })
         return (
@@ -38,7 +38,7 @@ class TaskList extends Component {
                         <td>
                         </td>
                     </tr>
-                    <eleTasks />
+                    { EleTasks }
                 </tbody>
             </table>
         );
