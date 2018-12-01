@@ -49,7 +49,6 @@ class App extends Component {
         var url = 'http://localhost:3001/todos';
         axios.get(url).then(function (res) {
             var Tasks = res.data;
-            console.log(Tasks);
         })
     };
     componentWillMount() {
@@ -60,7 +59,6 @@ class App extends Component {
             this.setState({
                 Tasks : Tasks
             })
-            console.log(Tasks);
         })
        
         
