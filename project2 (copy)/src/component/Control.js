@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 
 class Control extends Component {
-    closeForm = () => {
-        this.props.closeForm();
-    }
     render() {
         return (
             <div>
-                <button className="btn btn-primary mr-2" type="submit" onClick = {this.closeForm}>
-                    <span><i className="fas fa-plus-circle mr-2"></i></span>Thêm công việc
-                </button>
                 <div className="row">
                     <div className="col-md-6">
                         <div className="input-group mb-3">

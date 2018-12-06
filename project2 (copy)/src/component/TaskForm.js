@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
 
-
-
 class TaskForm extends Component {
-    closeForm = () => {
-        this.props.closeForm();
-    };
     render() {
         return (
             <div className="card">
                 <div className="card-header bg-info text-white">
                     Thêm công việc
                         <span className="float-right">
-                        <i className="fas fa-times-circle text-right active" onClick = {this.closeForm}></i>
+                        <i className="fas fa-times-circle text-right"></i>
                     </span>
                 </div>
                 <div className="card-body">

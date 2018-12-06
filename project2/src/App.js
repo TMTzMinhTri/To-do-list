@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import TaskForm from './component/TaskForm';
-// import Control from './component/Control';
+import Control from './component/Control';
 import TaskList from './component/TaskList';
 const axios = require('axios');
 
@@ -13,46 +13,12 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Tasks: []
+            Tasks: [],
+            isDisplayForm : false
         }
     }
-    getdata() {
-
-    }
-    createData = () => {
-        // var Tasks = [
-        //     {
-        //         id : 0,
-        //         name : 'go to school',
-        //         status: true
-        //     },
-        //     {
-        //         id : 1,
-        //         name : 'go to school',
-        //         status: true
-        //     },
-        //     {
-        //         id : 2,
-        //         name : 'go to school',
-        //         status: true
-        //     },
-        //     {
-        //         id : 3,
-        //         name : 'go to school',
-        //         status: true
-        //     }
-        // ];
-        // this.setState({
-        //     Tasks : Tasks
-        // });
-        // localStorage.setItem('Tasks', JSON.stringify(Tasks));
-        var url = 'http://localhost:3001/todos';
-        axios.get(url).then(function (res) {
-            var Tasks = res.data;
-        })
-    };
     componentWillMount() {
-        var url = 'http://localhost:3001/todos';
+        var url = 'http://localhost:9081/todos';
         axios.get(url)
         .then((res)=> {
             var Tasks = res.data;
@@ -63,23 +29,22 @@ class App extends Component {
        
         
     }
+    closeForm = () => {
+        this.setState({
+            isDisplayForm : !this.state.isDisplayForm
+        })
+    }
     render() {
-        var { Tasks } = this.state;
+        var { Tasks, isDisplayForm } = this.state;
         return (
             <div className="container">
                 <h1>Hiroku</h1>
                 <div className="row">
-                    <div className="col-md-4">
-                        <TaskForm />
-                        <button
-                            type="button"
-                            className="btn btn-warning"
-                            onClick={() => this.createData()}>
-                            Create Data
-                        </button>
+                    <div className={ isDisplayForm ? "col-md-4" : ''}>
+                        {isDisplayForm ? <TaskForm closeForm = {this.closeForm}/> : ''}
                     </div>
-                    <div className="col-md-8">
-                        {/* <Control /> */}
+                    <div className={ isDisplayForm ? "col-md-8" : 'col-md-12'}>
+                        <Control closeForm = {this.closeForm}/>
                         <div className="row">
                             <div className="col-md-12">
                                 <TaskList Tasks={Tasks} />
