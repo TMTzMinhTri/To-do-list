@@ -14,7 +14,8 @@ class App extends Component {
         super(props);
         this.state = {
             Tasks: [],
-            isDisplayForm : false
+            isDisplayForm : false,
+            name: ''
         }
     }
     componentWillMount() {
@@ -34,6 +35,12 @@ class App extends Component {
             isDisplayForm : !this.state.isDisplayForm
         })
     }
+    onSubmit = (data) => {
+        var url = 'http://localhost:9081/todos';
+        var Tasks = this.state.Tasks
+        Tasks.push(data);
+        axios.post(url, data);
+    }
     render() {
         var { Tasks, isDisplayForm } = this.state;
         return (
@@ -41,7 +48,7 @@ class App extends Component {
                 <h1>Hiroku</h1>
                 <div className="row">
                     <div className={ isDisplayForm ? "col-md-4" : ''}>
-                        {isDisplayForm ? <TaskForm closeForm = {this.closeForm}/> : ''}
+                        {isDisplayForm ? <TaskForm closeForm = {this.closeForm} onSubmit = { this.onSubmit }/> : ''}
                     </div>
                     <div className={ isDisplayForm ? "col-md-8" : 'col-md-12'}>
                         <Control closeForm = {this.closeForm}/>

@@ -27,7 +27,7 @@ class App extends Component {
             Tasks = JSON.parse(localStorage.getItem('Tasks'));
             console.log(Tasks);
             this.setState({
-                Tasks: Tasks
+                Tasks : Tasks
             });
             
             

@@ -6,7 +6,7 @@ class ListItem extends Component {
         return (
             <tr>
                 <td>{ index }</td>
-                <td>{ Task.content}</td>
+                <td>{ Task.name}</td>
                 <td className='text-center mt-10'>
                     <div className='alert alert-success' role="alert">kích hoạt</div>
                 </td>
