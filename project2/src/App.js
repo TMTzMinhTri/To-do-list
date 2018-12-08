@@ -27,8 +27,6 @@ class App extends Component {
                 Tasks : Tasks
             })
         })
-       
-        
     }
     closeForm = () => {
         this.setState({

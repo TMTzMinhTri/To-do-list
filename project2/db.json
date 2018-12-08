@@ -11,44 +11,9 @@
       "status": false
     },
     {
-      "id": 3,
-      "name": "go to bed",
-      "status": true
-    },
-    {
-      "id": 4,
-      "name": "go to play",
-      "status": false
-    },
-    {
       "name": "Trần Minh Trí",
-      "status": false,
-      "id": 5
-    },
-    {
-      "name": "Trần Minh Trí",
-      "status": false,
-      "id": 6
-    },
-    {
-      "name": "Trần Minh Trí",
-      "status": false,
-      "id": 7
-    },
-    {
-      "name": "Trần Minh Trí",
-      "status": false,
-      "id": 8
-    },
-    {
-      "name": "hahaha",
       "status": true,
-      "id": 9
-    },
-    {
-      "name": "hahaha",
-      "status": true,
-      "id": 10
+      "id": 3
     }
   ]
 }

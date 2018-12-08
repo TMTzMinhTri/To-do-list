@@ -29,7 +29,16 @@ class TaskForm extends Component {
     }
     onsubmit = (event) => {
         event.preventDefault();
-        this.props.onSubmit(this.state)
+        this.props.onSubmit(this.state);
+        this.onclear();
+        this.closeForm();
+    }
+    onclear() {
+        this.setState({
+            name: '',
+            status : false
+        });
+        this.closeForm();
     }
     render() {
         return (
@@ -63,7 +72,7 @@ class TaskForm extends Component {
                         <button className="btn btn-primary mr-2" type="submit">
                             <span><i className="fas fa-save mr-2"></i></span>Lưu lại
                     </button>
-                        <button className="btn btn-primary" type="reset">
+                        <button className="btn btn-primary" type="reset" onClick = {() => this.onclear()}>
                             <span><i className="fas fa-times mr-2"></i></span>Hủy bỏ
                     </button>
                     </form>

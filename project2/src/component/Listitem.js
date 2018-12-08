@@ -8,7 +8,10 @@ class ListItem extends Component {
                 <td>{ index }</td>
                 <td>{ Task.name}</td>
                 <td className='text-center mt-10'>
-                    <div className='alert alert-success' role="alert">kích hoạt</div>
+                    {Task.status 
+                        ? <div className = "alert alert-success"> { Task.status ? "kích hoạt" : "Ẩn"}</div> 
+                        : <div className = "alert alert-warning">{ Task.status ? "kích hoạt" : "Ẩn"}</div>
+                    }
                 </td>
                 <td>
                     <button type="button" className="btn btn-primary mr-2">
@@ -20,6 +23,7 @@ class ListItem extends Component {
                 </td>
             </tr>
         );
+        // );{ ...Task.status ? className="alert alert-success" : className="alert alert-warning"}
     }
 }
 
